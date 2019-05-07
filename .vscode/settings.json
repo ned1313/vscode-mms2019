@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/e8989b4b-9f68-4221-ad88-bc7c80ffa677/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/mms2019-node0",
+    "appService.deploySubpath": "app-service\\myExpressApp"
+}
