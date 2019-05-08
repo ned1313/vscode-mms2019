@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mms-moa-2019
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mms-moa-2019
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: mms-moa-2019
+        image: acrmms2019.azurecr.io/docker-mms2019:v2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          name: nginx
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mms-lb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: mms-moa-2019
