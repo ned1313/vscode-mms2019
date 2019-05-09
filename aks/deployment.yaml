@@ -13,7 +13,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: mms-moa-2019
-        image: acrmms2019.azurecr.io/docker-mms2019:v2
+        image: acrmms2019.azurecr.io/docker-mms2019:v3
         resources:
           limits:
             memory: "128Mi"
